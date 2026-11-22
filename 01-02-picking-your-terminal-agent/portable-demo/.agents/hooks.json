@@ -1,0 +1,14 @@
+{
+  "PreToolUse": [
+    {
+      "matcher": "run_command",
+      "command": "python3 scripts/block_destructive.py"
+    }
+  ],
+  "PostToolUse": [
+    {
+      "matcher": "edit_file|write_file",
+      "command": "npm run typecheck --silent"
+    }
+  ]
+}
