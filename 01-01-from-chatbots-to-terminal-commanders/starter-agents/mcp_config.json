@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp",
+      "description": "Remote Supabase MCP server for schema inspection, migrations, and RLS checks"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "description": "Browser inspection and UI verification tool"
+    }
+  }
+}

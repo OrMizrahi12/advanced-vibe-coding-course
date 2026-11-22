@@ -1,0 +1,12 @@
+# ShipPulse Engineering Rules
+- Stack: Node 22 HTTP server, vanilla HTML/CSS/JS, JSON disk store
+- Zero external npm dependencies; use node:http and node:test only
+- Run verification before commit: npm run test:api && npm run test:ui
+- Run live checks on :3000 with npm run test:e2e
+- Work inside dedicated git worktrees; never edit directly on main
+- Keep HTTP routes clean in src/server.js and atomic IO in src/store.js
+- Escape all rendered text using escapeHTML() in src/ui.js
+- Never bypass hooks, skip failing tests, or force-push branches
+- Store reusable workflows in .agents/skills/ with YAML frontmatter
+- Register remote tool endpoints in .agents/mcp_config.json
+- Keep commits atomic, single-purpose, and green before merge

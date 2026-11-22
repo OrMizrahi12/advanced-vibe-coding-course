@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "PreToolUse": [{
+      "matcher": "Bash(rm -rf|git push --force)",
+      "action": "block",
+      "command": "node scripts/guard-shell.js"
+    }],
+    "PostToolUse": [{
+      "matcher": "Write|Edit(src/**)",
+      "action": "verify",
+      "command": "npm run test:api && npm run test:ui"
+    }]
+  }
+}
