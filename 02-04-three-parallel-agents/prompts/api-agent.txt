@@ -1,0 +1,7 @@
+# Pane 1 — API Agent · feat/api (run inside ../wt-api)
+
+## Scoped Brief
+Edit ONLY src/api.js. Do NOT touch src/ui.js or test/app.test.js. Keep listTasks and getOpenCount unchanged. Add exported filterTasksByStatus(status) returning matching copied tasks (throw Error if status is not "open" or "done") and getTaskStats() returning { total, open, done }. Run npm test and summarize in 3 short lines.
+
+## Exact CLI Command
+agy -p 'Edit ONLY src/api.js. Do NOT touch src/ui.js or test/app.test.js. Keep listTasks and getOpenCount unchanged. Add exported filterTasksByStatus(status) returning matching copied tasks (throw Error if status is not "open" or "done") and getTaskStats() returning { total, open, done }. Run npm test and summarize in 3 short lines.' --mode accept-edits

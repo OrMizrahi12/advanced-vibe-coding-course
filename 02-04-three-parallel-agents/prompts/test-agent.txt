@@ -1,0 +1,7 @@
+# Pane 3 — Test Agent · feat/tests (run inside ../wt-tests)
+
+## Scoped Brief
+Edit ONLY test/app.test.js. Do NOT touch src/api.js or src/ui.js. Keep existing tests and add 3 node:test cases verifying listTasks returns defensive copies, renderSummary handles an empty array, and renderTaskList formats open vs done checkboxes accurately. Run npm test and summarize in 3 short lines.
+
+## Exact CLI Command
+agy -p 'Edit ONLY test/app.test.js. Do NOT touch src/api.js or src/ui.js. Keep existing tests and add 3 node:test cases verifying listTasks returns defensive copies, renderSummary handles an empty array, and renderTaskList formats open vs done checkboxes accurately. Run npm test and summarize in 3 short lines.' --mode accept-edits

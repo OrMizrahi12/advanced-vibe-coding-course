@@ -1,0 +1,7 @@
+# Pane 2 — UI Agent · feat/ui (run inside ../wt-ui)
+
+## Scoped Brief
+Edit ONLY src/ui.js. Do NOT touch src/api.js or test/app.test.js. Keep renderSummary and renderTaskList unchanged. Add exported renderStatusBadge(status) returning "[DONE]" or "[OPEN]" and renderProgressBar(tasks) returning a concise percentage bar string handling empty arrays safely. Run npm test and summarize in 3 short lines.
+
+## Exact CLI Command
+agy -p 'Edit ONLY src/ui.js. Do NOT touch src/api.js or test/app.test.js. Keep renderSummary and renderTaskList unchanged. Add exported renderStatusBadge(status) returning "[DONE]" or "[OPEN]" and renderProgressBar(tasks) returning a concise percentage bar string handling empty arrays safely. Run npm test and summarize in 3 short lines.' --mode accept-edits
