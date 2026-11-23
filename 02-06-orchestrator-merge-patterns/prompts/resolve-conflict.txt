@@ -1,0 +1,22 @@
+# Integrator Agent Conflict-Resolution Prompt (run on main during an active merge conflict)
+
+## 1. Inspect Before Resolving
+git status -s
+cat package.json
+git diff --check
+
+## 2. Scoped Resolution Brief
+Resolve the Git merge conflict in package.json by keeping BOTH "check:api" from HEAD and "test:verbose" from feat/tests as valid JSON. Do NOT modify test/app.test.js or run git add/commit. Run node --check src/api.js and npm test, then summarize in 3 short lines.
+
+## 3. Exact CLI Command
+agy -p \
+  'Resolve the Git merge conflict in package.json by keeping BOTH "check:api"
+from HEAD and "test:verbose" from feat/tests as valid JSON. Do NOT modify
+test/app.test.js or run git add/commit. Run node --check src/api.js and
+npm test, then summarize in 3 short lines.' --mode accept-edits
+
+## 4. Independent Deterministic Verification & Merge Commit
+cat package.json
+git diff --check
+git add package.json && git commit --no-edit
+npm run check:api && npm run test:verbose
