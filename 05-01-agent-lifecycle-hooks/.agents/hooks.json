@@ -1,0 +1,19 @@
+{
+  "lifecycle-tracer": {
+    "enabled": true,
+    "SessionStart": [
+      { "command": "../scripts/hook-logger.py", "timeout": 5 }
+    ],
+    "PreToolUse": [{
+      "matcher": "(view|read|list|find|grep)_.*|run_command",
+      "hooks": [{ "command": "../scripts/hook-logger.py", "timeout": 5 }]
+    }],
+    "PostToolUse": [{
+      "matcher": "(view|read|list|find|grep)_.*|run_command",
+      "hooks": [{ "command": "../scripts/hook-logger.py", "timeout": 5 }]
+    }],
+    "Stop": [
+      { "command": "../scripts/hook-logger.py", "timeout": 5 }
+    ]
+  }
+}
