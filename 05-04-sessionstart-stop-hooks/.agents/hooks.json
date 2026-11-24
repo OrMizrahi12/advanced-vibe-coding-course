@@ -1,0 +1,77 @@
+{
+  "lifecycle-tracer": {
+    "enabled": true,
+    "SessionStart": [
+      {
+        "command": "../scripts/hook-logger.py",
+        "timeout": 5
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "(view|read|list|find|grep)_.*|run_command",
+        "hooks": [
+          {
+            "command": "../scripts/hook-logger.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "command": "../scripts/hook-logger.py",
+        "timeout": 5
+      }
+    ]
+  },
+  "safety-gate": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "run_command|(view|read|grep|find|list)_.*",
+        "hooks": [
+          {
+            "command": "../scripts/pretool-guard.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "auto-quality": {
+    "enabled": true,
+    "PostToolUse": [
+      {
+        "matcher": "(write|edit)_file|write_to_file|(multi_)?replace_file_content",
+        "hooks": [
+          {
+            "command": "../scripts/posttool-quality.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostInvocation": [
+      {
+        "command": "../scripts/posttool-quality.py",
+        "timeout": 5
+      }
+    ]
+  },
+  "loop-steering": {
+    "enabled": true,
+    "SessionStart": [
+      {
+        "command": "../scripts/session-context.py",
+        "timeout": 5
+      }
+    ],
+    "Stop": [
+      {
+        "command": "../scripts/stop-test-gate.py",
+        "timeout": 15
+      }
+    ]
+  }
+}
