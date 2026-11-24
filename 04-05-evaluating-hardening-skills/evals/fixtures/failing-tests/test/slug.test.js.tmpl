@@ -1,0 +1,7 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { slugify } from "../src/slug.js";
+
+test("slugify converts title to lowercase hyphenated slug", () => {
+  assert.equal(slugify("Hello Vibe Coding!"), "hello-vibe-coding");
+});
