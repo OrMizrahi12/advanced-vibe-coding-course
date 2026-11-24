@@ -1,0 +1,11 @@
+{
+  "inherits": [
+    {
+      "path": "/workspace/shared-skills/skills.json",
+      "exclude": ["legacy-lint"]
+    }
+  ],
+  "entries": [
+    { "path": ".agents/skills" }
+  ]
+}
