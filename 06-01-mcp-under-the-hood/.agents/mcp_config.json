@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "project-pulse": {
+      "command": "node",
+      "args": ["/workspace/lab-mcp/scripts/project-mcp.mjs"],
+      "env": {
+        "MCP_DATA": "/workspace/lab-mcp/data/releases.json",
+        "MCP_LOG": "/tmp/mcp-wire.log"
+      },
+      "disabledTools": [
+        "audit_logs", "billing_export", "cache_purge", "db_snapshot",
+        "deploy_preview", "env_diff", "incident_page", "metrics_dump",
+        "quota_report", "webhook_replay"
+      ]
+    },
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp",
+      "disabled": true
+    }
+  }
+}

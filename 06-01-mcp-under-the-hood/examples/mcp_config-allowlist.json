@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "project-pulse": {
+      "command": "node",
+      "args": ["/workspace/lab-mcp/scripts/project-mcp.mjs"],
+      "env": {
+        "MCP_DATA": "/workspace/lab-mcp/data/releases.json",
+        "MCP_LOG": "/tmp/mcp-wire.log"
+      },
+      "enabledTools": ["release_status"]
+    },
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp",
+      "disabled": true
+    }
+  }
+}
