@@ -1,0 +1,14 @@
+{
+  "name": "lab-deploy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "stack:check": "node scripts/stack-check.mjs",
+    "typecheck": "tsc --noEmit",
+    "db:types": "supabase gen types typescript --remote --schema public > src/lib/database.types.ts && oxfmt src/lib/database.types.ts",
+    "auth:verify": "node scripts/verify-auth-flow.mjs"
+  }
+}
