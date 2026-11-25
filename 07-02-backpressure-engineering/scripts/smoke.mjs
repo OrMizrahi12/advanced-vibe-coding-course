@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import { createQueue } from '../src/queue.js';
+
+const q = createQueue();
+q.enqueue('low', { priority: 1 });
+q.enqueue('tie-a', { priority: 5 });
+q.enqueue('tie-b', { priority: 5 });
+q.enqueue('default');
+assert.equal(q.dequeue().payload, 'tie-a');
+assert.equal(q.dequeue().payload, 'tie-b');
+const low = q.dequeue();
+assert.equal(low.payload, 'low');
+q.requeue(low, 2);
+const retry = q.dequeue();
+assert.equal(retry.payload, 'low');
+q.requeue(retry, 2);
+assert.equal(q.deadLetters().length, 1);
+assert.equal(q.dequeue().payload, 'default');
+assert.equal(q.size(), 0);
+console.log('SMOKE_OK queued=4 dead=1');
