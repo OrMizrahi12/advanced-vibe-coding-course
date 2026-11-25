@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "stories": [
+      {
+        "id": "MT-01",
+        "passes": false,
+        "title": "Priority histogram",
+        "acceptance": "Create src/metrics.js (JSDoc + export function priorityHistogram(jobs) returning {[priority]:count} with default 0) and 2 node:test tests in test/metrics.test.js."
+      },
+      {
+        "id": "MT-02",
+        "passes": false,
+        "title": "Dead-letter rate",
+        "acceptance": "In src/metrics.js export function failureRate(pending, dead) returning Number((dead/(pending+dead)).toFixed(4)) or 0 when total===0; add 2 tests in test/metrics.test.js."
+      }
+    ]
+  },
+  "filter": {
+    "stories": [
+      {
+        "id": "FL-01",
+        "passes": false,
+        "title": "Min priority view",
+        "acceptance": "Create src/filter.js (JSDoc + export function filterMinPriority(jobs, min) returning jobs with (job.priority ?? 0) >= min) and 2 node:test tests in test/filter.test.js."
+      },
+      {
+        "id": "FL-02",
+        "passes": false,
+        "title": "Multi-tag filter",
+        "acceptance": "In src/filter.js export function filterByTags(jobs, tags) returning jobs whose job.tag is in tags ([] when tags empty); add 2 tests in test/filter.test.js."
+      }
+    ]
+  },
+  "snapshot": {
+    "stories": [
+      {
+        "id": "SN-01",
+        "passes": false,
+        "title": "JSON serializer",
+        "acceptance": "Create src/snapshot.js (JSDoc + export function serializeJobs(jobs) returning JSON.stringify({version:1, jobs})) and 2 node:test tests in test/snapshot.test.js."
+      },
+      {
+        "id": "SN-02",
+        "passes": false,
+        "title": "Snapshot parser",
+        "acceptance": "In src/snapshot.js export function deserializeJobs(raw) parsing JSON, checking version===1 and Array.isArray(jobs) else throwing Error; add 2 tests in test/snapshot.test.js."
+      }
+    ]
+  }
+}
