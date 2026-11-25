@@ -1,0 +1,20 @@
+{
+  "project": "lab-loops", "verify": "npm run verify",
+  "stories": [
+    { "id": "US-01", "passes": true,
+      "title": "Priority ordering",
+      "acceptance": "Higher priority (default 0) dequeues first; +2 tests" },
+    { "id": "US-02", "passes": true,
+      "title": "Retry cap and dead-letter queue",
+      "acceptance": "requeue(job, max=3) retries or deadLetters(); +2 tests" },
+    { "id": "US-03", "passes": false,
+      "title": "Queue stats snapshot",
+      "acceptance": "stats() returns {pending, dead, total}; +2 tests" },
+    { "id": "US-04", "passes": false,
+      "title": "Filter pending jobs by tag",
+      "acceptance": "byTag(tag) returns pending jobs with job.tag===tag; +2 tests" },
+    { "id": "US-05", "passes": false,
+      "title": "Purge dead-letter queue",
+      "acceptance": "purgeDead() clears deadLetters, returns count; +2 tests" }
+  ]
+}
