@@ -1,0 +1,5 @@
+{"ts":"2026-11-23T08:01:10Z","branch":"main","status":"CIRCUIT_BREAKER_TRIPPED","reason":"protected_branch","iters":0,"commits":0,"sandbox":false,"in_tok":0,"out_tok":0}
+{"ts":"2026-11-23T08:02:15Z","branch":"feat/ralph-hardened","status":"CIRCUIT_BREAKER_TRIPPED","reason":"protected_path","iters":1,"commits":0,"sandbox":false,"in_tok":0,"out_tok":0}
+{"ts":"2026-11-23T08:04:02Z","branch":"feat/ralph-hardened","status":"CIRCUIT_BREAKER_TRIPPED","reason":"identical_failure_hash","iters":2,"commits":0,"sandbox":false,"in_tok":0,"out_tok":0}
+{"ts":"2026-11-23T08:07:40Z","branch":"feat/ralph-hardened","status":"MAX_ITERS_REACHED","reason":"budget_exhausted","iters":5,"commits":2,"sandbox":true,"in_tok":41200,"out_tok":3890}
+{"ts":"2026-11-23T08:10:05Z","branch":"main","status":"RALPH_COMPLETE","reason":"all_stories_passed","iters":0,"commits":0,"sandbox":false,"in_tok":0,"out_tok":0}
