@@ -1,0 +1,12 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "dev-guardrails",
+  "displayName": "Dev Guardrails",
+  "version": "1.0.0",
+  "description": "Portable rules, guard-check skill, and lifecycle hooks.",
+  "suggestedPrompts": [
+    "Run /guard-check before committing on this branch"
+  ],
+  "license": "MIT",
+  "keywords": ["guardrails", "hooks", "skills", "quality"]
+}

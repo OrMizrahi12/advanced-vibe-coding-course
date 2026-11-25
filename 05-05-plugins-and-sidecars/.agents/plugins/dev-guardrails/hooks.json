@@ -1,0 +1,21 @@
+{
+  "lifecycle-tracer": {
+    "SessionStart": [{"command": "./scripts/hook-logger.py", "timeout": 5}],
+    "PostToolUse": [{"matcher": "(view|read|list|find|grep)_.*|run_command",
+      "hooks": [{"command": "./scripts/hook-logger.py", "timeout": 5}]}],
+    "Stop": [{"command": "./scripts/hook-logger.py", "timeout": 5}]
+  },
+  "safety-gate": {
+    "PreToolUse": [{"matcher": "run_command|(view|read|grep|find|list)_.*",
+      "hooks": [{"command": "./scripts/pretool-guard.py", "timeout": 5}]}]
+  },
+  "auto-quality": {
+    "PostToolUse": [{"matcher": "(write|edit)_.*|.*replace_file_content",
+      "hooks": [{"command": "./scripts/posttool-quality.py", "timeout": 5}]}],
+    "PostInvocation": [{"command": "./scripts/posttool-quality.py", "timeout": 5}]
+  },
+  "loop-steering": {
+    "SessionStart": [{"command": "./scripts/session-context.py", "timeout": 5}],
+    "Stop": [{"command": "./scripts/stop-test-gate.py", "timeout": 15}]
+  }
+}

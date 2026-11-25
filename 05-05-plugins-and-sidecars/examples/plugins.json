@@ -1,0 +1,8 @@
+{
+  "entries": [
+    {
+      "path": "/workspace/team-plugins",
+      "exclude": ["experimental-.*"]
+    }
+  ]
+}

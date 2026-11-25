@@ -1,0 +1,12 @@
+{
+  "plugins": {
+    "dev-guardrails": {
+      "enabled": true
+    }
+  },
+  "sidecars": {
+    "dev-guardrails/test-watcher": {
+      "enabled": true
+    }
+  }
+}

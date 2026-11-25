@@ -1,0 +1,12 @@
+{
+  "display_name": "Dev Guardrails Test Watcher",
+  "description": "Runs npm test in background when src/ files change.",
+  "command": "python3",
+  "args": ["watch.py"],
+  "restart_policy": "on-failure",
+  "env": {
+    "WATCH_REPO": "/workspace/lab-hooks",
+    "WATCH_INTERVAL_SEC": "3",
+    "WATCH_LOG": "/tmp/sidecar-watch.log"
+  }
+}
