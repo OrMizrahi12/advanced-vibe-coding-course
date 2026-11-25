@@ -1,0 +1,14 @@
+{
+  "project": "lab-loops", "verify": "npm test",
+  "stories": [
+    { "id": "US-01", "passes": false,
+      "title": "Priority ordering",
+      "acceptance": "Higher priority (default 0) dequeues first; +2 tests" },
+    { "id": "US-02", "passes": false,
+      "title": "Retry cap and dead-letter queue",
+      "acceptance": "requeue(job, max=3) retries or deadLetters(); +2 tests" },
+    { "id": "US-03", "passes": false,
+      "title": "Queue stats and CLI JSON output",
+      "acceptance": "stats() counts pending/deadLetter + src/cli.js; +2 tests" }
+  ]
+}
