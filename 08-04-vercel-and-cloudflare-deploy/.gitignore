@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+.next/
+.vercel/
+.wrangler/
+logs/
+*.log
+supabase/.temp/
+.agents/mcp_config.json
+edge-worker/.wrangler/
+edge-worker/node_modules/
+.vercel
+.env*
